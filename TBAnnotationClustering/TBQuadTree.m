@@ -77,6 +77,10 @@ void TBQuadTreeNodeSubdivide(TBQuadTreeNode* node)
 
 bool TBQuadTreeNodeInsertData(TBQuadTreeNode* node, TBQuadTreeNodeData data)
 {
+    if (!node) {
+        return;
+    }
+    
     if (!TBBoundingBoxContainsData(node->boundingBox, data)) {
         return false;
     }
